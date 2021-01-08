@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
+    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCbZeLB29P3KTpM-4GUqJGL-FEwDO-c5EM&callback=initMap"
+    type="text/javascript"></script> 
+    <script>
+        let map;
+
+        function initMap() {
+            map = new google.maps.Map(document.getElementById("map"), {
+                center: { lat: -34.397, lng: 150.644 },
+                zoom: 8,
+            });
+        }
+    </script>
+    <script defer src="jquery-3.5.1.min.js"></script>
+
+    <script defer src="map.js"></script>
+
+
+    <link rel="stylesheet" href="map.css">
+
+</head>
+<body>
+    <input type="text" id="adresse">
+    <button id="btn">valider</button>
+    <div id="map"></div>
+
+</body>
+</html>
