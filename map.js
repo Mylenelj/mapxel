@@ -26,15 +26,21 @@ $(function () {
                 method: "get",
                 dataType: "json",
                 data: {
-                    lat: "-34.397",
-                    lon: "150",
+                    lat: resultat[0].lat,
+                    lon: resultat[0].lon,
                     appid: "77ce096b22bb8b2a6059f11e9d402d8b",
                     lang: "fr",
                     units: "metric"
                 }
 
             }).done(function (meteo) {
-                console.log(meteo);
+                let temperature = meteo.main.temp;
+                let icon = meteo.weather[0].icon;
+                let description = meteo.weather[0].description;
+                let image = new Image();
+                image.src = "http://openweathermap.org/img/wn/" + icon + "@2x.png";
+                $("#meteo").append("La température actuelle est de <strong>" + temperature + "°C</strong>", image);
+
             })
         })
     })
